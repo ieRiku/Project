@@ -1,0 +1,24 @@
+/* Add your CSS styling here */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('background.jpg'); /* Replace with the path to your image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: rgba(52, 152, 219, 0.8); /* Using a slightly transparent color */
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+main {
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9); /* Adding a light background color to the content area */
+}
+
+/* ... other styles ... */

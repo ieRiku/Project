@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Doctor Information</title>
+</head>
+<body>
+    <header>
+        <h1>Doctor Information</h1>
+    </header>
+    <main>
+        <section id="doctorInfo">
+            <h2 id="doctorName"></h2>
+            <p>Availability: <span id="availability"></span></p>
+            <button id="checkAvailability">Check Availability</button>
+            <button id="bookAppointment">Book an Appointment</button>
+        </section>
+    </main>
+    <script src="script.js"></script>
+    <script>
+        // JavaScript code for handling doctor information and availability
+        document.addEventListener("DOMContentLoaded", () => {
+            const doctorName = document.getElementById("doctorName");
+            const availability = document.getElementById("availability");
+            const checkAvailabilityBtn = document.getElementById("checkAvailability");
+            const bookAppointmentBtn = document.getElementById("bookAppointment");
+
+            // Get doctor name from URL parameter
+            const urlParams = new URLSearchParams(window.location.search);
+            const doctor = urlParams.get("doctor");
+
+            if (doctor) {
+                doctorName.textContent = doctor;
+
+                // Simulated dummy availability data
+                const dummyDoctors = {
+                    "Doctor A": "Mon, Wed, Fri",
+                    "Doctor B": "Tue, Thu",
+                    "Doctor C": "Mon, Tue, Wed"
+                };
+
+                availability.textContent = dummyDoctors[doctor];
+
+                checkAvailabilityBtn.addEventListener("click", () => {
+                    // Implement logic to check doctor's availability
+                    alert(`Checking availability for ${doctor}`);
+                });
+
+                bookAppointmentBtn.addEventListener("click", () => {
+                    // Implement logic to book an appointment
+                    alert(`Booking an appointment with ${doctor}`);
+                });
+            } else {
+                // Redirect back to index.html if no doctor parameter is provided
+                window.location.href = "index.html";
+            }
+        });
+    </script>
+</body>
+</html>
